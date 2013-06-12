@@ -23,7 +23,7 @@ abstract class Pigeon_Core_Transport {
 	 */
 	public static function factory($group)
 	{
-		$config = Kohana::config('pigeon')->get($group);
+		$config = Kohana::$config->load('pigeon')->get($group);
 
 		$class = 'Pigeon_Transport_'.ucfirst($config['transport']);
 
